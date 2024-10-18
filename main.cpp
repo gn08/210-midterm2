@@ -22,7 +22,7 @@ private:
 public:
     DoublyLinkedList() { head = nullptr; tail = nullptr; }
 
-    void insert_after(int value, int position) {
+    void insert_after(const string& value, int position) {
         if (position < 0) {
             cout << "Position must be >= 0." << endl;
             return;
@@ -53,7 +53,7 @@ public:
         temp->next = newNode;
     }
 
-    void delete_val(int value) {
+    void delete_val(const string& value)) {
         if (!head) return;
 
         Node* temp = head;
@@ -76,44 +76,7 @@ public:
         delete temp;
     }
 
-    void delete_pos(int pos) {
-        if (!head) {
-            cout << "List is empty." << endl;
-            return;
-        }
-    
-        if (pos == 1) {
-            pop_front();
-            return;
-        }
-    
-        Node* temp = head;
-    
-        for (int i = 1; i < pos; i++){
-            if (!temp) {
-                cout << "Position doesn't exist." << endl;
-                return;
-            }
-            else
-                temp = temp->next;
-        }
-        if (!temp) {
-            cout << "Position doesn't exist." << endl;
-            return;
-        }
-    
-        if (!temp->next) {
-            pop_back();
-            return;
-        }
-    
-        Node* tempPrev = temp->prev;
-        tempPrev->next = temp->next;
-        temp->next->prev = tempPrev;
-        delete temp;
-    }
-
-    void push_back(int v) {
+    void push_back(const string& v) {
         Node* newNode = new Node(v);
         if (!tail)
             head = tail = newNode;
@@ -124,7 +87,7 @@ public:
         }
     }
     
-    void push_front(int v) {
+    void push_front(const string& v) {
         Node* newNode = new Node(v);
         if (!head)
             head = tail = newNode;
@@ -136,7 +99,6 @@ public:
     }
     
     void pop_front() {
-
         if (!head) {
             cout << "List is empty." << endl;
             return;
@@ -202,6 +164,15 @@ public:
         cout << endl;
     }
 };
+
+vector<string> load_names(){
+    vector <string> names;
+    string name;
+    ifstream file();
+    while (getline(file, name)){
+        
+    }
+}
 
 int main() {
     cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
