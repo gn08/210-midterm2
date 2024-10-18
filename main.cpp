@@ -1,3 +1,5 @@
+// Midterm 2 || Gaby Filipova || CS 210
+// https://github.com/gn08/210-midterm2.git 
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -25,7 +27,21 @@ private:
     Node* tail;
 
 public:
-    DoublyLinkedList() { head = nullptr; tail = nullptr; }
+    DoublyLinkedList() : head(nullptr), tail(nullptr){}
+
+    string front() const{
+        if (head){
+            return head-> name;
+        }
+        return "";
+    }
+
+    string back() const{
+        if (tail){
+            return tail -> name;
+        }
+        return "";
+    }
 
     void insert_after(const string& value, int position) {
         if (position < 0) {
@@ -63,7 +79,7 @@ public:
 
         Node* temp = head;
         
-        while (temp && temp->data != value)
+        while (temp && temp->name != value)
             temp = temp->next;
 
         if (!temp) return; 
@@ -216,7 +232,7 @@ int main() {
         }
 
         prob = rand() % 100 + 1;
-        if (){
+        if (prob <=20){
             string leaving = line.back();
             line.pop_back();
             cout << " " << leaving << "exits rear line" << endl;
