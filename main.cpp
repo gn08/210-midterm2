@@ -6,11 +6,11 @@ const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 class DoublyLinkedList {
 private:
     struct Node {
-        int data;
+        string name;
         Node* prev;
         Node* next;
-        Node(int val, Node* p = nullptr, Node* n = nullptr) {
-            data = val; 
+        Node(const string& val, Node* p = nullptr, Node* n = nullptr) {
+            name = val; 
             prev = p;
             next = n;
         }
