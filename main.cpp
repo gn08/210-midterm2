@@ -1,4 +1,9 @@
 #include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <vector>
+#include <string>
+#include <ctime>
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
@@ -53,7 +58,7 @@ public:
         temp->next = newNode;
     }
 
-    void delete_val(const string& value)) {
+    void delete_val(const string& value) {
         if (!head) return;
 
         Node* temp = head;
@@ -145,7 +150,7 @@ public:
             return;
         }
         while (current) {
-            cout << current->data << " ";
+            cout << current->name << " ";
             current = current->next;
         }
         cout << endl;
@@ -158,17 +163,22 @@ public:
             return;
         }
         while (current) {
-            cout << current->data << " ";
+            cout << current->name << " ";
             current = current->prev;
         }
         cout << endl;
+
     }
 };
 
 vector<string> load_names(const string& filename){
     vector <string> names;
     string name;
-    ifstream filefilename();
+    ifstream file(filename);
+    if (!file.is_open()){
+        cout << "Can't open" << filename << endl;
+        return names;
+    }
     while (getline(file, name)){
         names.push_back(name);
     }
@@ -182,7 +192,7 @@ int main() {
 
     cout << "Store opens: " << endl;
 
-    for(inr i = 0; i < 5; ++i){
+    for(int i = 0; i < 5; ++i){
         string name= names[rand() % names.size()];
         line.push_back(name);
         cout << " " << name << "joins the line" << endl;
@@ -191,7 +201,7 @@ int main() {
 
     for (int time_step = 2; time_step <= 20; ++time_step){
         cout << "Time step #" << time_step << ":" << endl;
-        int prob - rand() % 100 +1;
+        int prob = rand() % 100 +1;
         if (prob <= 40 && !line.is_empty()){
             string served = line.front();
             line.pop_front();
