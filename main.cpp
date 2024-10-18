@@ -28,7 +28,9 @@ private:
 
 public:
     DoublyLinkedList() : head(nullptr), tail(nullptr){}
-
+    bool is_empty() const{
+        return head == nullptr;
+    }
     string front() const{
         if (head){
             return head-> name;
