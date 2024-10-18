@@ -165,18 +165,23 @@ public:
     }
 };
 
-vector<string> load_names(){
+vector<string> load_names(const string& filename){
     vector <string> names;
     string name;
-    ifstream file();
+    ifstream filefilename();
     while (getline(file, name)){
-        
+        names.push_back(name);
     }
+    return names;
 }
 
 int main() {
-    cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
+    srand(static_cast<unsigned int>(time(0)));
+    DoublyLinkedList line;
 
+    for(){
+        
+    }
     
     return 0;
 }
