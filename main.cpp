@@ -178,10 +178,27 @@ vector<string> load_names(const string& filename){
 int main() {
     srand(static_cast<unsigned int>(time(0)));
     DoublyLinkedList line;
+    vector<string> names = load_names("names.txt");
 
-    for(){
-        
+    cout << "Store opens: " << endl;
+
+    for(inr i = 0; i < 5; ++i){
+        string name= names[rand() % names.size()];
+        line.push_back(name);
+        cout << " " << name << "joins the line" << endl;
     }
-    
+    line.print();
+
+    for (int time_step = 2; time_step <= 20; ++time_step){
+        cout << "Time step #" << time_step << ":" << endl;
+        int prob - rand() % 100 +1;
+        if (prob){
+            string served = line.front();
+            line.pop_front();
+            cout << " " << served << "is served" << endl;
+        }
+        if
+    }
+
     return 0;
 }
