@@ -192,12 +192,34 @@ int main() {
     for (int time_step = 2; time_step <= 20; ++time_step){
         cout << "Time step #" << time_step << ":" << endl;
         int prob - rand() % 100 +1;
-        if (prob){
+        if (prob <= 40 && !line.is_empty()){
             string served = line.front();
             line.pop_front();
             cout << " " << served << "is served" << endl;
         }
-        if
+
+        prob = rand() % 100 + 1;
+        if (prob <= 60){
+            string name= names[rand() % names.size()];
+            line.push_back(name);
+            cout << " " << name << "joins the line" << endl;
+        }
+
+        prob = rand() % 100 + 1;
+        if (){
+            string leaving = line.back();
+            line.pop_back();
+            cout << " " << leaving << "exits rear line" << endl;
+        }
+
+        prob = rand() % 100 + 1;
+        if (prob <= 10){
+            string vip_name = names[rand() % names.size()];
+            line.push_front(vip_name);
+            cout << " " << vip_name << "(VIP) joins the front of the line" << endl;
+        }
+        
+        line.print();
     }
 
     return 0;
